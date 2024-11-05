@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="Style2.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img width="200px" height="100px" src="images/logo.png" />
+        </div>
+
+        <div class="menu">
+            <li>
+                <a href="#">Sản phẩm</a>
+                <ul class="submenu">
+                    <li>
+                        <img src="images/skirt.ico" /> Chăm sóc trang phục
+                        <ul>
+                            <li><a href="">Máy giặt</a></li>
+                            <li><a href="">Máy sấy</a></li>
+                            <li><a href="">Bàn ủi</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <img src="images/clean.ico" /> Chăm sóc nhà cửa
+                        <ul>
+                            <li><a href="">Máy hút bụi</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <img src="images/kaf.ico" /> Sản phẩm nhà bếp
+                        <ul>
+                            <li><a href="">Tủ lạnh</a></li>
+                            <li><a href="">Bếp từ</a></li>
+                            <li><a href="">Lò nướng</a></li>
+                            <li><a href="">Máy rửa bát</a></li>
+                            <li><a href="">Lò vi sóng</a></li>
+                            <li><a href="">Nồi chiên không dầu</a></li>
+                            <li><a href="">Nồi cơm điện</a></li>
+                            <li><a href="">Máy nướng bánh mì</a></li>
+                            <li><a href="">Máy đánh trứng</a></li>
+                            <li><a href="">Máy xay sinh tố</a></li>
+                            <li><a href="">Bình đun siêu tốc</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <img src="images/air.ico" /> Giải pháp không khí
+                        <ul>
+                            <li><a href="">Máy lọc không khí</a></li>
+                            <li><a href="">Máy hút ẩm</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Hỗ trợ</a></li>
+            <li><a href="#">Khuyến mãi</a></li>
+            <li><a href="#">Blog</a></li>
+        </div>
+
+        <div class="others">
+            <ul>
+                <li>
+                    <input placeholder="Tìm kiếm" type="text" />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </li>
+                <li><i class="fa-solid fa-heart"></i></li>
+                <li><i class="fa-solid fa-user"></i></li>
+                <li><i class="fa-solid fa-cart-shopping"></i></li>
+            </ul>
+        </div>
+    </header>
+    <!-----------------------------------------product--------------------------------------------->
+    <section class="product">
+        <div class="container">
+            <div class="product-top row">
+                <p>Trang chủ </p><span>&#10230;</span><p> Sản phẩm </p><span>&#10230;</span><p> Máy giặt</p><span>&#10230;</span><p>Máy giặt cửa ngang 10kg UltimateCare 500 - Xám đen Onyx</p>
+            </div>
+            <div class="product-content">
+                <div class="product-content-left">
+                    <div class="product-content-left-big-img">
+                        <img src="images/2.1.png" />
+                    </div>
+                    <div class="product-content-left-small-img">
+                        <img src="images/2.1.png" />
+                        <img src="images/2.2.png" />
+                        <img src="images/2.3.png" />
+                        <img src="images/2.4.png" />
+                    </div>
+                </div>
+                <div class="product-content-right">
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-----------------footer-->
+        <section class="app-container">
+            <p>Tải ứng dụng Company</p>
+            <div class="app-google">
+                <img src="images/googleplay.png" />
+                <img src="images/appstore.png" />
+            </div>
+            <p>Nhận bản tin của Company</p>
+            <input type="text" placeholder="Nhập email của bạn ....." />
+        </section>
+        <footer>
+            <div class="footer-top">
+                <ul>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li>
+                        <a href="https://www.facebook.com"><img src="images/facebook.png" alt="Facebook" /></a>
+                        <a href="https://www.twitter.com"><img src="images/twitter.png" alt="Twitter" /></a>
+                        <a href="https://www.youtube.com"><img src="images/youtube.png" alt="YouTube" /></a>
+                    </li>
+                </ul>
+            </div>
+    
+            <address>
+                <p>
+                    Công ty TNHH [Your Company Name] Việt Nam<br />
+                    Địa chỉ: Tầng [Floor Number] & [Floor Number] tòa nhà [Building Name], số [Building Number] Hoàng Cầu, phường Ô Chợ Dừa, quận Đống Đa, Hà Nội<br />
+                    Điện thoại: +84-[Phone Number]
+                </p>
+            </address>
+            <div class="footer-bottom">
+                ©Company All right reserver
+            </div>
+        </footer>
+    </body>
+    <script>
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", function(){
+            x = window.pageYOffset;
+            if (x > 0) {
+                header.classList.add("sticky");
+            }
+            else {
+                header.classList.remove("sticky");
+            }
+        })
+    
+        const itemsliderbar=document.querySelectorAll(".cartegory-left-li");
+        itemsliderbar.forEach(function(menu,index){
+            menu.addEventListener("click",function(){
+                menu.classList.toggle("block")
+            })
+        })
+    </script>
+    </html>
