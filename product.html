@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>product</title>
     <link rel="stylesheet" href="Style2.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -122,7 +122,7 @@
                     </div>
                     <p style="color:red;">Vui lòng chọn size</p>
                     <div class="product-content-right-product-button">
-                        <button><img src="images/shopping-cart.png" /><p>MUA</p></button>
+                        <button><i class="fa-solid fa-basket-shopping"></i><p>MUA</p></button>
                         <button><p>TÌM TẠI CỬA HÀNG</p></button>
                     </div>
                     <div class="product-content-right-product-icon">
@@ -139,13 +139,78 @@
                     <div class="product-content-right-product-QR">
                         <img src="images/qr.png" />
                     </div>
-                    <div class="product-content-right-button">
-                        <div class="product-content-right-button-top">
+                    <div class="product-content-right-bottom">
+                        <div class="product-content-right-bottom-top">
                             &#8744;
+                        </div>
+                        <div class="product-content-right-bottom-content-big">
+                            <div class="product-content-right-bottom-content-title row">
+                                <div class="product-content-right-bottom-content-title-item chitiet">
+                                    <p>Chi tiết</p>
+                                </div>
+                                <div class="product-content-right-bottom-content-title-item baoquan">
+                                    <p>Bảo quản</p>
+                                </div>
+                                <div class="product-content-right-bottom-content-title-item">
+                                    <p>Tham khảo size</p>
+                                </div>
+                            </div>
+                            <div class="product-content-right-bottom-content">
+                                <div class="product-content-right-bottom-content-chitiet" style="color: blue;">
+                                    Không còn vết cặn chất giặt tẩy*<br/>
+                                    Giặt nhanh đầy tải chỉ 45 phút<br/>
+                                    Chương trình diệt khuẩn chuyên sâu<br/>
+                                    Nâng niu vải mỏng, tự tin giặt máy<br/>
+                                    Tùy chọn chương trình cá nhân hóa thông minh<br/>
+                                    Hiệu quả và tiết kiệm năng lượng hơn<br/>
+                                </div>
+                                <div class="product-content-right-bottom-content-baoquan">
+                                    Không còn vết cặn chất giặt tẩy*<br/>
+                                    Giặt nhanh đầy tải chỉ 45 phút<br/>
+                                    Chương trình diệt khuẩn chuyên sâu<br/>
+                                    Nâng niu vải mỏng, tự tin giặt máy<br/>
+                                    Tùy chọn chương trình cá nhân hóa thông minh<br/>
+                                    Hiệu quả và tiết kiệm năng lượng hơn<br/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 </div>
+        </div>
+    </section>
+    <!------------------------------------------------------------------>
+    <section class="product-related">
+        <div class="product-related-title">
+            <p>Sản phẩm liên quan</p>
+            
+        </div>
+        <div class="product-content">
+            <div class="product-related-item">
+                <img src="images/sp1.jpg"/>
+                <h1>Máy giặt cửa trên 14kg UltimateCare 700</h1>
+                <p>10.090.000<sup>đ</sup></p>
+            </div>
+            <div class="product-related-item">
+                <img src="images/sp2.jpg"/>
+                <h1>Máy giặt cửa trên 14kg UltimateCare 700</h1>
+                <p>10.090.000<sup>đ</sup></p>
+            </div>
+            <div class="product-related-item">
+                <img src="images/sp3.jpg"/>
+                <h1>Máy giặt cửa trên 14kg UltimateCare 700</h1>
+                <p>10.090.000<sup>đ</sup></p>
+            </div>
+            <div class="product-related-item">
+                <img src="images/sp3.jpg"/>
+                <h1>Máy giặt cửa trên 14kg UltimateCare 700</h1>
+                <p>10.090.000<sup>đ</sup></p>
+            </div>
+            <div class="product-related-item">
+                <img src="images/sp2.jpg"/>
+                <h1>Máy giặt cửa trên 14kg UltimateCare 700</h1>
+                <p>10.090.000<sup>đ</sup></p>
+            </div>
         </div>
     </section>
         <!-----------------footer-->
@@ -175,7 +240,7 @@
             <address>
                 <p>
                     Công ty TNHH [Your Company Name] Việt Nam<br />
-                    Địa chỉ: Tầng [Floor Number] & [Floor Number] tòa nhà [Building Name], số [Building Number] Hoàng Cầu, phường Ô Chợ Dừa, quận Đống Đa, Hà Nội<br />
+                    Địa chỉ: Tầng [Floor Number] [Floor Number] tòa nhà [Building Name], số [Building Number] Hoàng Cầu, phường Ô Chợ Dừa, quận Đống Đa, Hà Nội<br />
                     Điện thoại: +84-[Phone Number]
                 </p>
             </address>
@@ -195,12 +260,44 @@
                 header.classList.remove("sticky");
             }
         })
-    
+        //----------------------------------------------------------------------------------------
         const itemsliderbar=document.querySelectorAll(".cartegory-left-li");
         itemsliderbar.forEach(function(menu,index){
             menu.addEventListener("click",function(){
                 menu.classList.toggle("block")
             })
         })
+
+        //--------------------------------------product------------------------------------------//
+        const bigImg = document.querySelector(".product-content-left-big-img img");
+        const smallImg = document.querySelectorAll(".product-content-left-small-img img");
+        smallImg.forEach(function(imgItem,x){
+            imgItem.addEventListener("click", function(){
+                bigImg.src=imgItem.src;
+            })
+        })
+
+        
+        const baoquan =document.querySelector(".baoquan");
+        const chitiet =document.querySelector(".chitiet");
+        if(baoquan){
+            baoquan.addEventListener("click", function(){
+                document.querySelector(".product-content-right-bottom-content-chitiet").style.display="none";
+                document.querySelector(".product-content-right-bottom-content-baoquan").style.display="block";
+            })
+        }
+        if(chitiet){
+            chitiet.addEventListener("click", function(){
+                document.querySelector(".product-content-right-bottom-content-chitiet").style.display="block";
+                document.querySelector(".product-content-right-bottom-content-baoquan").style.display="none";
+            })
+        }
+
+        const butTon = document.querySelector(".product-content-right-bottom-top");
+        if(butTon){
+            butTon.addEventListener("click", function(){
+                document.querySelector(".product-content-right-bottom-content-big").classList.toggle("activeB");
+            })
+        }
     </script>
     </html>
