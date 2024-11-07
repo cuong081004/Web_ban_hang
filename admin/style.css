@@ -60,3 +60,17 @@ header{
     border: 1px solid brown;
     color: brown;
 }
+
+/*--------------categorylist----------*/
+.Admin-content-right-category_list table {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.Admin-content-right-category_list table tr th,td {
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+}
+table {
+    border-collapse: collapse;
+}

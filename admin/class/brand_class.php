@@ -4,18 +4,17 @@ include "../database.php";
 
 <?php
 
-class category {
+class brand {
     private $db;
 
     public function __construct()
     {
         $this ->db = new Database();
     }
-    public function insert_category($category_name)
+    public function insert_brand($category_id, $brand_name)
     {
-        $query ="INSERT INTO tbl_category (category_name) VALUES ('$category_name')";
+        $query ="INSERT INTO tbl_brand (category_id, brand_name) VALUES ('$category_id,$brand_name')";
         $result = $this ->db -> insert($query);
-        header('location:categorylist.php');
         return $result;
     }
     public function show_category()
