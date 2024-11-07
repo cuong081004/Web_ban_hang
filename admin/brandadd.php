@@ -4,7 +4,7 @@ include "slider.php";
 include "class/brand_class.php";
 ?>
 
-<?php
+<?php 
 $brand =new brand;
 if($_SERVER ['REQUEST_METHOD']=== 'POST')
 {
