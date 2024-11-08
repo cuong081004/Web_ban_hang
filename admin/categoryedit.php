@@ -17,6 +17,7 @@ include("class/category_class.php");
     }
 ?>
 
+
 <?php
 $category = new category;
 if ($_SERVER['REQUEST_METHOD']==='POST') {
@@ -25,17 +26,17 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     }
 ?>
 
-        <div class="admin-content-right">
-            <div class="admin-content-right-category_add">
-                <h1>SỬa Danh Mục</h1>
-                <form action="" method="POST">
-                    <input required name="category_name" type="text" placeholder="Nhập tên danh mục " 
-                    value="<?php echo $result['category_name'] ?>">
-                    <button type="submit">Sửa</button>
-                </form>
-            </div>
-        </div>
-    </section>
+<div class="admin-content-right">
+    <div class="admin-content-right-category_add">
+        <h1>SỬa Danh Mục</h1>
+        <form action="" method="POST">
+            <input required name="category_name" type="text" placeholder="Nhập tên danh mục "
+                value="<?php echo $result['category_name'] ?>">
+            <button type="submit">Sửa</button>
+        </form>
+    </div>
+</div>
+</section>
 </body>
+
 </html>
-    

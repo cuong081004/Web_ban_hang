@@ -1,5 +1,5 @@
 <?php
-include "../database.php";
+include "database.php";
 ?>
 
 <?php
@@ -13,8 +13,10 @@ class brand {
     }
     public function insert_brand($category_id, $brand_name)
     {
-        $query ="INSERT INTO tbl_brand (category_id, brand_name) VALUES ('$category_id,$brand_name')";
+        $query ="INSERT INTO tbl_brand (category_id, brand_name) VALUES ('$category_id','$brand_name')";
         $result = $this ->db -> insert($query);
+        header("Lacotien");
+        header('location:brandlist.php');
         return $result;
     }
     public function show_category()
@@ -23,6 +25,17 @@ class brand {
         $result = $this ->db -> select($query);
         return $result;
     }
+
+    public function show_brand()
+    {
+        // $query ="SELECT * FROM tbl_brand ORDER BY brand_id DESC";
+        $query ="SELECT tbl_brand*,tbl_category.category_name
+                 FROM tbl_brand INNER JOIN tbl_category ON tbl_brand.category_id = tbl.category.category_id
+                 ORDER BY tbl_brand.brand_id DESC";
+        $result = $this ->db -> select($query);
+        return $result;
+    }
+
     public function get_category($category_id,){
         $query ="SELECT *FROM tbl_category WHERE category_id= '$category_id'";
         $result = $this ->db -> select($query);
