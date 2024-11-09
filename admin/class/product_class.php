@@ -20,7 +20,6 @@ class product {
         $product_price_new = $_POST['product_price_new'];
         $product_desc = $_POST['product_desc'];
         $product_img = $_FILES['product_img']['name'];
-        $product_img_desc = $_FILES['product_img_desc']['name'];
         move_uploaded_file($_FILES['product_img']['tmp_name'], "uploads/".$_FILES['product_img']['name']);
 
         $query = "INSERT INTO tbl_product(
@@ -30,8 +29,7 @@ class product {
         product_price,
         product_price_new,
         product_desc,
-        product_img,
-        product_img_desc)
+        product_img)
         VALUES(
         '$product_name',
         '$category_id',
@@ -39,9 +37,22 @@ class product {
         '$product_price',
         '$product_price_new',
         '$product_desc',
-        '$product_img',
-        '$product_img_desc')";
+        '$product_img')";
         $result = $this ->db -> insert($query);
+
+        if($result){
+            $query = "SELECT * FROM tbl_product ORDER BY product_id DESC LIMIT 1";
+            $result = $this ->db -> select($query)->fetch_assoc();
+            $product_id= $result['product_id'];
+            $filename = $_FILES['product_img_desc']['name'];
+            $filetmp = $_FILES['product_img_desc']['tmp_name'];
+
+            foreach($filename as $key =>$value){
+                move_uploaded_file($filetmp[$key], "uploads/".$value);
+                $query ="INSERT INTO tbl_product_img_desc (product_id,product_img_desc) VALUES ('$product_id','$value')";
+                $result = $this ->db -> insert($query); 
+            }
+        }
         // header('location:brandlist.php');
         return $result;
     }
